@@ -6,20 +6,20 @@ loadData = 1;
 % loadData = 2 for XOR data set
 % loadData = 3 for gaussian data points
 
+
+
 %% 2. don't have to change these lines in block 2
-numPoints = 100;  % number of data points for each class
-Y=[-ones(1,numPoints),ones(1,numPoints)];
-
-
 if(loadData==1)
 % set 1
 % linearly separable data set at y = 1
 
-dat1=[rand(1,numPoints/2);rand(1,numPoints/2)];   % class '+1'
-dat2=[rand(1,numPoints/2);1+rand(1,numPoints/2)]; % class '-1'
+dat1=[rand(1,numPoints);rand(1,numPoints)];   % class '+1'
+dat2=[rand(1,numPoints);1+rand(1,numPoints)]; % class '-1'
 X =[dat1,dat2];
 data = X';
+Y=[-ones(1,numPoints),ones(1,numPoints)];
 size(data)
+size(Y)
 end
 
 
@@ -29,6 +29,8 @@ dat1 = [randn(numPoints,2)/20 ; 1+randn(numPoints,2)/20];
 dat2 = [repmat([1,0],numPoints,1)+randn(numPoints,2)/20 ; repmat([0,1],numPoints,1)+randn(numPoints,2)/20];
 data = [dat1;dat2];
 size(data)
+Y = [-ones(1,numPoints*2), ones(1,numPoints*2)];
+size(Y)
 end
 
 if(loadData==3)
@@ -39,8 +41,11 @@ dist = 5;
 dat1 = randn(numPoints,2);
 dat2 = sqrt(dist)+randn(numPoints,2);
 data = [dat1; dat2];
+Y=[-ones(1,numPoints),ones(1,numPoints)];
 size(data)
+size(Y)
 end
+
 
 %% 3. TASK: start a for loop for learning the weights iteratively.
 
