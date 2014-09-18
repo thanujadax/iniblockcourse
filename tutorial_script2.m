@@ -11,8 +11,8 @@ if(loadData==1)
 % set 1
 % linearly separable data set at y = 1
 
-dat1=[rand(1,numPoints);rand(1,numPoints);ones(1,numPoints)];   % class '+1'
-dat2=[rand(1,numPoints);1+rand(1,numPoints);ones(1,numPoints)]; % class '-1'
+dat1=[rand(1,numPoints);rand(1,numPoints)];   % class '+1'
+dat2=[rand(1,numPoints);1+rand(1,numPoints)]; % class '-1'
 X=[dat1,dat2];
 data = X';
 end
