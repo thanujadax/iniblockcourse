@@ -1,12 +1,10 @@
 %% 1. Create data sets by selecting either 1, 2 or 3 
 % Please select 1, 2 or 3 to pick a data set
-
+numPoints = 100; % number of points per each class
 loadData = 1; 
 % loadData = 1 for linearly separable 2 classes
 % loadData = 2 for XOR data set
 % loadData = 3 for gaussian data points
-
-
 
 %% 2. don't have to change these lines in block 2
 if(loadData==1)
