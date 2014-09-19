@@ -56,7 +56,7 @@ end
 
 %% Initialize weights
 w0 = rand(2,1);
-numIterations = 300;
+numIterations = 300; 
 %% 3. TASK: start a for loop for learning the weights iteratively.
 
 % inside the loop, choose a random data point. randi(n) is the function that

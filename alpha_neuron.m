@@ -26,7 +26,7 @@ spike_train(find(spike_train < thr)) = zeros(size((find(spike_train < thr))));
 
 % alpha func synaptic conductance
 t_a = 100; % Max duration of syn conductance
-g_peak = 0.05; % nS (peak synaptic conductance)
+g_peak = 0.07; % nS (peak synaptic conductance)
 t_vec = 0:t_a;
 alpha_func = g_peak*t_vec.*(exp(-t_vec));
 clf
@@ -71,7 +71,7 @@ for t = 1:t_max
 
    % Update spike times
    if t_list
-     t_list += 1;
+     t_list = t_list + 1;
      if (t_list(1) == t_a)  % Reached max duration of syn conductance
        t_list = t_list(2:max(size(t_list)));
      end
@@ -79,7 +79,7 @@ for t = 1:t_max
 
    % Compute membrane voltage
    if ~ref
-     V += ( -((V-E_leak)/(R*C)) + (I_syn/C));
+     V = V + ( -((V-E_leak)/(R*C)) + (I_syn/C));
    else
      ref = ref - 1;
      V = V_th-10; % reset voltage after spike
